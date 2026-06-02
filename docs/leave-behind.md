@@ -24,7 +24,7 @@ the envelope. The envelope blocks every adversarial scenario.
 
 ## What's there
 - **Live dashboard + scenario replay:** https://gray-sand-0b848070f.7.azurestaticapps.net
-- **Code (private):** https://github.com/ABMFST/robot-trust-envelope
+- **Code (public, MIT licensed):** https://github.com/ABMFST/robot-trust-envelope
 - **STPA worksheet, architecture diagram, Trusted Launch → robot mapping** in `docs/`.
 - **10 unit tests, ruff-clean, CI passing.**
 

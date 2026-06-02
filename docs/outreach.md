@@ -5,7 +5,7 @@ one that fits the channel. The site URL is the lead asset; everything
 else is supporting context.
 
 **Site:** https://gray-sand-0b848070f.7.azurestaticapps.net
-**Repo:** https://github.com/ABMFST/robot-trust-envelope (private - Tim can be added on request)
+**Repo:** https://github.com/ABMFST/robot-trust-envelope (public, MIT licensed)
 
 ---
 
@@ -28,12 +28,11 @@ else is supporting context.
 > from a (toy) STPA analysis that plays the same role security baselines
 > play across the Linux fleet, and an LLM-driven red-team operator that
 > tries to drive the robot outside the envelope. Live dashboard, demo
-> trace, and architecture write-up here:
+> trace, and architecture write-up here (repo is public, MIT licensed):
 >
 > https://gray-sand-0b848070f.7.azurestaticapps.net
 >
-> Repo is private but I'd happily add you. Could I steal 20 minutes to
-> walk you through it and hear what you'd actually want this team to
+> Could I steal 20 minutes to walk you through it and hear what you'd actually want this team to
 > own? Either way, congrats on the charter - the cyber + functional
 > safety + AI safety overlap is exactly the kind of seam that's
 > historically been hard to staff.
