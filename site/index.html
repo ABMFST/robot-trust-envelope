@@ -117,32 +117,32 @@
   </div>
 </section>
 
-<section class="container two-col">
-  <div>
-    <h2>What the envelope enforces</h2>
-    <p>Five constraints, each traceable to an STPA Unsafe Control Action.</p>
-    <table class="constraints">
-      <thead><tr><th>ID</th><th>Constraint</th><th>Default</th><th>UCA</th></tr></thead>
-      <tbody>
-        <tr><td>C-1</td><td>Bounded linear speed</td><td>0.3 m/s</td><td>UCA-1</td></tr>
-        <tr><td>C-2</td><td>Bounded angular speed</td><td>1.0 rad/s</td><td>UCA-1</td></tr>
-        <tr><td>C-3</td><td>Workspace polygon</td><td>unit square</td><td>UCA-2</td></tr>
-        <tr><td>C-4</td><td>Minimum obstacle standoff</td><td>0.40 m</td><td>UCA-3</td></tr>
-        <tr><td>C-5</td><td>Command requires attested JWT</td><td>true</td><td>UCA-4</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div>
-    <h2>Architecture</h2>
-    <img src="assets/architecture.svg" alt="Architecture diagram: cloud control plane (Fleet CA, Attestation, Policy) → edge (Safety Envelope, Robot Control) ← operator (LLM red-team)" class="arch">
-  </div>
+<section class="container">
+  <h2>What the envelope enforces</h2>
+  <p class="muted">Five constraints, each traceable to an STPA Unsafe Control Action.</p>
+  <table class="constraints">
+    <thead><tr><th>ID</th><th>Constraint</th><th>Default</th><th>UCA</th></tr></thead>
+    <tbody>
+      <tr><td>C-1</td><td>Bounded linear speed</td><td>0.3 m/s</td><td>UCA-1</td></tr>
+      <tr><td>C-2</td><td>Bounded angular speed</td><td>1.0 rad/s</td><td>UCA-1</td></tr>
+      <tr><td>C-3</td><td>Workspace polygon</td><td>unit square</td><td>UCA-2</td></tr>
+      <tr><td>C-4</td><td>Minimum obstacle standoff</td><td>0.40 m</td><td>UCA-3</td></tr>
+      <tr><td>C-5</td><td>Command requires attested JWT</td><td>true</td><td>UCA-4</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="container">
+  <h2>Architecture</h2>
+  <p class="muted">Edge/cloud control plane on top, edge robot stack in the middle, operator (human or LLM agent) at the bottom.</p>
+  <img src="assets/architecture.svg" alt="Architecture diagram: edge/cloud control plane (Fleet CA, Attestation, Policy) → edge (Safety Envelope, Robot Control) ← operator (LLM red-team)" class="arch">
 </section>
 
 <section class="container">
   <h2>Why this maps to the role</h2>
   <p>A short bridge between what I already ship on Azure and what the Microsoft Robotics platform needs.</p>
   <table class="mapping">
-    <thead><tr><th>Cloud (today)</th><th>Robot fleet (this repo)</th></tr></thead>
+    <thead><tr><th>Edge / Cloud (today)</th><th>Robot fleet (this repo)</th></tr></thead>
     <tbody>
       <tr><td>vTPM measured boot, PCR0..7</td><td>Robot agent reports simulated PCR digest</td></tr>
       <tr><td>UEFI Secure Boot signature chain</td><td><code>firmware_hash</code> allow-list</td></tr>

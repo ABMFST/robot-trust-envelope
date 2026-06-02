@@ -19,7 +19,7 @@ else is supporting context.
 > team (Robot Security & Safety, 200038208). I run Trusted Launch (vTPM
 > + Secure Boot) for Azure Local and own the Security Benchmarks program
 > for public and regulated cloud environments across that fleet. The
-> parallels between the cloud control plane I work in and what your team
+> parallels between the edge/cloud control plane I work in and what your team
 > is building for robot fleets jumped out at me, so I spent the weekend
 > building a working prototype to make that case concretely.
 >

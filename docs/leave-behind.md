@@ -30,7 +30,7 @@ the envelope. The envelope blocks every adversarial scenario.
 
 ## Why me
 
-| Cloud (today)                                    | Robot fleet (this prototype)                 |
+| Edge / Cloud (today)                             | Robot fleet (this prototype)                 |
 |--------------------------------------------------|----------------------------------------------|
 | vTPM measured boot + Secure Boot for Gen2 VMs    | Simulated PCR digest + signed-firmware list  |
 | Microsoft Azure Attestation → AAD-issued token   | `FleetCA` issuing short-lived EdDSA JWTs     |

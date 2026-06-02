@@ -5,7 +5,7 @@ work (Gen2 VM Trusted Launch on Azure Local plus the Security Benchmarks
 program I own for public and regulated cloud environments) and the
 security responsibilities of the Microsoft Robotics platform.
 
-| Cloud (today)                                     | Robot fleet (this repo)                          | Why it matters |
+| Edge / Cloud (today)                              | Robot fleet (this repo)                          | Why it matters |
 |---------------------------------------------------|--------------------------------------------------|----------------|
 | vTPM measured boot (PCR0..7)                      | Robot agent reports simulated PCR digest         | Boot-time integrity is the foundation under everything else |
 | UEFI Secure Boot signature chain                  | `firmware_hash` allow-list in `quote.py`         | Stops unsigned firmware from joining the fleet |

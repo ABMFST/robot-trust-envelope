@@ -18,7 +18,7 @@
     </style>
   </defs>
 
-  <text x="20" y="32" class="lane">CLOUD CONTROL PLANE</text>
+  <text x="20" y="32" class="lane">EDGE / CLOUD CONTROL PLANE</text>
   <line x1="20" y1="44" x2="880" y2="44" stroke="#e5e7eb"/>
   <text x="20" y="222" class="lane">EDGE / ROBOT FLEET</text>
   <line x1="20" y1="234" x2="880" y2="234" stroke="#e5e7eb"/>
