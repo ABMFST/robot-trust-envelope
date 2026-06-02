@@ -57,7 +57,7 @@ def run_scenario(scenario_name: str) -> dict:
 
     samples = []
     interventions = []
-    authenticated = True
+    authenticated = scenario.authenticated
 
     for t in range(len(scenario.scripted_cmds)):
         lin, ang = agent.next_cmd(robot.pose_xy)

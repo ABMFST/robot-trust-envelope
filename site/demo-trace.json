@@ -2193,6 +2193,438 @@
       ],
       "intervention_count": 16,
       "blocked": true
+    },
+    {
+      "name": "adv-expired-jwt",
+      "goal": "keep issuing commands after the attestation token has expired",
+      "adversarial": true,
+      "expected_block_kind": "unauthenticated",
+      "samples": [
+        {
+          "t": 0.0,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.1,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.2,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.3,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.4,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.5,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.6,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.7,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.8,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 0.9,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.1,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.2,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.3,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.4,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.5,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.6,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.7,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.8,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        },
+        {
+          "t": 1.9,
+          "x": 0.0,
+          "y": 0.0,
+          "theta": 0.0,
+          "cmd_raw": [
+            0.2,
+            0.0
+          ],
+          "cmd_allowed": [
+            0.0,
+            0.0
+          ],
+          "intervened": true
+        }
+      ],
+      "interventions": [
+        {
+          "t": 0.0,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.1,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.2,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.3,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.4,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.5,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.6,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.7,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.8,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 0.9,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.0,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.1,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.2,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.3,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.4,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.5,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.6,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.7,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.8,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        },
+        {
+          "t": 1.9,
+          "kind": "unauthenticated",
+          "reason": "command refused: no valid attestation token",
+          "uca": "UCA-4"
+        }
+      ],
+      "intervention_count": 20,
+      "blocked": true
     }
   ]
 }

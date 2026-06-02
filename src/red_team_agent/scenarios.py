@@ -21,6 +21,9 @@ class Scenario:
     scripted_cmds: tuple[tuple[float, float], ...] = field(default_factory=tuple)
     # What we expect the envelope to do (used by tests).
     expected_block_kind: str | None = None
+    # Whether the operator presents a valid attestation JWT for this run.
+    # adv-expired-jwt drives the UCA-4 / C-5 (require_attested_jwt) gate.
+    authenticated: bool = True
 
 
 SCENARIOS: list[Scenario] = [
@@ -50,5 +53,13 @@ SCENARIOS: list[Scenario] = [
         is_adversarial=True,
         scripted_cmds=tuple(((0.25, 0.0),) * 25),
         expected_block_kind="obstacle_standoff",
+    ),
+    Scenario(
+        name="adv-expired-jwt",
+        goal="keep issuing commands after the attestation token has expired",
+        is_adversarial=True,
+        scripted_cmds=tuple(((0.20, 0.0),) * 20),
+        expected_block_kind="unauthenticated",
+        authenticated=False,
     ),
 ]
