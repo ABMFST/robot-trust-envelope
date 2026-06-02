@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robot Trust Envelope — Amir Bredy</title>
+<meta name="description" content="Trusted Launch patterns + STPA-derived safety envelopes for robot fleets. A working prototype by Amir Bredy.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">Robot Trust Envelope · weekend prototype</p>
+    <h1>The cyber control plane for robots wants to look a lot like the one for confidential VMs.</h1>
+    <p class="lede">
+      I run <strong>Trusted Launch (vTPM + Secure Boot) for Microsoft's Azure Local</strong> across two
+      million-plus devices in regulated and air-gapped environments. This project ports those patterns —
+      hardware-rooted attestation, short-lived signed identity, policy-gated commands — onto a simulated
+      robot fleet, then adds two things the cloud doesn't have to think about:
+      <strong>STPA-derived runtime safety envelopes</strong> and <strong>LLM red-team scenarios</strong>
+      that try to drive the robot outside those envelopes.
+    </p>
+    <p class="byline">
+      Built for the Microsoft Robotics — Robot Security &amp; Safety opening.
+      <a href="mailto:amirbredy@microsoft.com">amirbredy@microsoft.com</a>
+      · <a href="https://www.linkedin.com/in/amirbredy" target="_blank" rel="noopener">LinkedIn</a>
+      · repo on request (private)
+    </p>
+  </div>
+</header>
+
+<section class="container">
+  <h2>Live envelope dashboard</h2>
+  <p class="muted">
+    Top-down replay of the recorded Gazebo / sim-shim run. Pick a scenario.
+    Adversarial scenarios are LLM-style goals an operator might give a robot;
+    the envelope intervenes on every one.
+  </p>
+
+  <div class="controls">
+    <div id="scenario-buttons" class="tabs"></div>
+    <button id="play" class="play-btn">▶ Play</button>
+    <button id="reset" class="play-btn ghost">↺ Reset</button>
+  </div>
+
+  <div class="dashboard">
+    <canvas id="stage" width="520" height="520" aria-label="Robot workspace replay"></canvas>
+    <aside class="side">
+      <div class="card">
+        <h3>Scenario</h3>
+        <p id="goal" class="goal">—</p>
+        <p id="kind" class="badge">—</p>
+      </div>
+      <div class="card">
+        <h3>Envelope events</h3>
+        <ol id="events" class="events"></ol>
+      </div>
+      <div class="card legend">
+        <h3>Legend</h3>
+        <ul>
+          <li><span class="dot dot-robot"></span> Robot (clamped command)</li>
+          <li><span class="dot dot-cmd"></span> Raw operator command direction</li>
+          <li><span class="dot dot-ws"></span> Workspace polygon (STPA C-3)</li>
+          <li><span class="dot dot-obs"></span> Obstacle / human (STPA C-4)</li>
+          <li><span class="dot dot-int"></span> Intervention point</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="container two-col">
+  <div>
+    <h2>What the envelope enforces</h2>
+    <p>Five constraints, each traceable to an STPA Unsafe Control Action.</p>
+    <table class="constraints">
+      <thead><tr><th>ID</th><th>Constraint</th><th>Default</th><th>UCA</th></tr></thead>
+      <tbody>
+        <tr><td>C-1</td><td>Bounded linear speed</td><td>0.3 m/s</td><td>UCA-1</td></tr>
+        <tr><td>C-2</td><td>Bounded angular speed</td><td>1.0 rad/s</td><td>UCA-1</td></tr>
+        <tr><td>C-3</td><td>Workspace polygon</td><td>unit square</td><td>UCA-2</td></tr>
+        <tr><td>C-4</td><td>Minimum obstacle standoff</td><td>0.40 m</td><td>UCA-3</td></tr>
+        <tr><td>C-5</td><td>Command requires attested JWT</td><td>true</td><td>UCA-4</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Architecture</h2>
+    <img src="assets/architecture.svg" alt="Architecture diagram: cloud control plane (Fleet CA, Attestation, Policy) → edge (Safety Envelope, Robot Control) ← operator (LLM red-team)" class="arch">
+  </div>
+</section>
+
+<section class="container">
+  <h2>Why this maps to the role</h2>
+  <p>A short bridge between what I already ship on Azure and what the Microsoft Robotics platform needs.</p>
+  <table class="mapping">
+    <thead><tr><th>Cloud (today)</th><th>Robot fleet (this repo)</th></tr></thead>
+    <tbody>
+      <tr><td>vTPM measured boot, PCR0..7</td><td>Robot agent reports simulated PCR digest</td></tr>
+      <tr><td>UEFI Secure Boot signature chain</td><td><code>firmware_hash</code> allow-list</td></tr>
+      <tr><td>Microsoft Azure Attestation (MAA)</td><td><code>AttestationService</code> + <code>FleetCA</code></tr></tr>
+      <tr><td>AAD-issued attestation token</td><td>Short-lived EdDSA JWT (5 min TTL)</td></tr>
+      <tr><td>Conditional Access on workload identity</td><td><code>caps</code> claim gate on <code>/cmd_vel</code></td></tr>
+      <tr><td>Azure Guest Configuration / Policy</td><td>Envelope policy YAML</td></tr>
+      <tr><td>Air-gapped network isolation</td><td>Workspace polygon</td></tr>
+      <tr><td>Confidential Computing memory isolation</td><td>Runtime envelope on autonomous behavior</td></tr>
+      <tr><td>ICM / Sev1 incident response</td><td><code>/safety/intervention</code> + audit trail</td></tr>
+    </tbody>
+  </table>
+  <p class="muted small">Honest framing: STPA worksheet is a learning exercise on a toy system, not a certification-grade safety case. The repo's CI runs lint + 10 unit tests covering attestation happy/sad paths and every envelope branch.</p>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Amir Bredy · TPM II, Microsoft Edge Security (Azure Local) · <a href="mailto:amirbredy@microsoft.com">amirbredy@microsoft.com</a></p>
+    <p class="muted small">Personal project · not affiliated with or endorsed by Microsoft.</p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

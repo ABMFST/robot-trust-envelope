@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <style>
+      .box { fill: #fff; stroke: #111827; stroke-width: 1.5; }
+      .cloud { fill: #e0f2fe; stroke: #0369a1; }
+      .edge  { fill: #ecfdf5; stroke: #047857; }
+      .robot { fill: #fef3c7; stroke: #b45309; }
+      .agent { fill: #fae8ff; stroke: #7e22ce; }
+      .label { font-size: 14px; font-weight: 600; fill: #111827; }
+      .sub   { font-size: 11px; fill: #4b5563; }
+      .lane  { font-size: 12px; font-weight: 700; fill: #6b7280; letter-spacing: 0.06em; }
+      .edge-label { font-size: 11px; fill: #374151; }
+      line, path { stroke: #374151; stroke-width: 1.5; fill: none; }
+    </style>
+  </defs>
+
+  <text x="20" y="32" class="lane">CLOUD CONTROL PLANE</text>
+  <line x1="20" y1="44" x2="880" y2="44" stroke="#e5e7eb"/>
+  <text x="20" y="222" class="lane">EDGE / ROBOT FLEET</text>
+  <line x1="20" y1="234" x2="880" y2="234" stroke="#e5e7eb"/>
+  <text x="20" y="412" class="lane">OPERATOR (HUMAN OR LLM AGENT)</text>
+  <line x1="20" y1="424" x2="880" y2="424" stroke="#e5e7eb"/>
+
+  <!-- Cloud: Fleet CA + Policy -->
+  <rect x="60"  y="80" width="240" height="110" rx="10" class="box cloud"/>
+  <text x="180" y="110" text-anchor="middle" class="label">Fleet CA (Ed25519)</text>
+  <text x="180" y="128" text-anchor="middle" class="sub">issues short-lived JWTs</text>
+  <text x="180" y="146" text-anchor="middle" class="sub">analog of Microsoft Azure Attestation</text>
+  <text x="180" y="170" text-anchor="middle" class="sub">TTL: 5 min · alg: EdDSA</text>
+
+  <rect x="340" y="80" width="240" height="110" rx="10" class="box cloud"/>
+  <text x="460" y="110" text-anchor="middle" class="label">Attestation Service</text>
+  <text x="460" y="128" text-anchor="middle" class="sub">nonce + quote verification</text>
+  <text x="460" y="146" text-anchor="middle" class="sub">firmware + boot-component allow-list</text>
+  <text x="460" y="170" text-anchor="middle" class="sub">issues capability claims (caps)</text>
+
+  <rect x="620" y="80" width="240" height="110" rx="10" class="box cloud"/>
+  <text x="740" y="110" text-anchor="middle" class="label">Safety Policy Store</text>
+  <text x="740" y="128" text-anchor="middle" class="sub">envelope params (YAML)</text>
+  <text x="740" y="146" text-anchor="middle" class="sub">workspace polygon, V-max, D-min</text>
+  <text x="740" y="170" text-anchor="middle" class="sub">analog of Azure Guest Configuration</text>
+
+  <!-- Edge: Safety Envelope + Robot Control -->
+  <rect x="180" y="270" width="260" height="120" rx="10" class="box edge"/>
+  <text x="310" y="298" text-anchor="middle" class="label">Safety Envelope Node</text>
+  <text x="310" y="318" text-anchor="middle" class="sub">subscribes /cmd_vel_raw, /odom, /scan</text>
+  <text x="310" y="336" text-anchor="middle" class="sub">enforces STPA C-1..C-5</text>
+  <text x="310" y="354" text-anchor="middle" class="sub">publishes /cmd_vel + /safety/intervention</text>
+  <text x="310" y="375" text-anchor="middle" class="sub">core: pure Python · adapter: rclpy</text>
+
+  <rect x="500" y="270" width="240" height="120" rx="10" class="box robot"/>
+  <text x="620" y="298" text-anchor="middle" class="label">Robot Control (TurtleBot4)</text>
+  <text x="620" y="318" text-anchor="middle" class="sub">executes /cmd_vel</text>
+  <text x="620" y="336" text-anchor="middle" class="sub">emits /odom, /scan</text>
+  <text x="620" y="354" text-anchor="middle" class="sub">attested boot (sim-PCR)</text>
+  <text x="620" y="375" text-anchor="middle" class="sub">Gazebo Harmonic + ROS2 Jazzy</text>
+
+  <!-- Operator -->
+  <rect x="340" y="450" width="240" height="70" rx="10" class="box agent"/>
+  <text x="460" y="478" text-anchor="middle" class="label">Red-Team Operator (LLM)</text>
+  <text x="460" y="496" text-anchor="middle" class="sub">emits /cmd_vel_raw from a natural-language goal</text>
+  <text x="460" y="511" text-anchor="middle" class="sub">benign + adversarial scenarios</text>
+
+  <!-- Flow arrows -->
+  <path d="M 460 190 L 460 230" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="468" y="214" class="edge-label">JWT</text>
+
+  <path d="M 740 190 L 740 250 L 440 250 L 440 270" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="600" y="244" class="edge-label">envelope policy</text>
+
+  <path d="M 460 450 L 460 410 L 320 410 L 320 390" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="328" y="406" class="edge-label">/cmd_vel_raw + JWT</text>
+
+  <path d="M 440 330 L 500 330" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="448" y="324" class="edge-label">/cmd_vel (allowed)</text>
+
+  <path d="M 500 360 L 440 360" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="448" y="376" class="edge-label">/odom, /scan</text>
+
+  <path d="M 310 270 L 310 200 L 300 200" stroke="#374151" marker-end="url(#arrow)" stroke-dasharray="4 3"/>
+  <text x="200" y="262" class="edge-label">/safety/intervention → audit pipeline</text>
+</svg>

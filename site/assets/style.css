@@ -1,0 +1,108 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121a33;
+  --ink: #e7ecf3;
+  --muted: #97a1b8;
+  --accent: #6ee7b7;
+  --accent2: #93c5fd;
+  --warn: #fca5a5;
+  --line: #233055;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent2); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+.hero {
+  padding: 72px 0 56px;
+  background:
+    radial-gradient(1200px 400px at 70% -20%, rgba(110,231,183,.18), transparent 60%),
+    radial-gradient(900px 300px at 10% -10%, rgba(147,197,253,.12), transparent 70%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  text-transform: uppercase; letter-spacing: .14em;
+  font-size: 12px; color: var(--accent); margin: 0 0 18px;
+}
+h1 { font-size: 38px; line-height: 1.15; margin: 0 0 18px; max-width: 880px; }
+.lede { font-size: 18px; max-width: 880px; color: #d4dbe8; }
+.byline { margin-top: 28px; color: var(--muted); font-size: 14px; }
+
+section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+h2 { font-size: 24px; margin: 0 0 8px; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+
+.controls { display: flex; align-items: center; gap: 12px; margin: 22px 0 18px; flex-wrap: wrap; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tabs button {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  padding: 8px 12px; border-radius: 999px; cursor: pointer; font-size: 14px;
+}
+.tabs button.active {
+  background: var(--accent); color: #06281b; border-color: var(--accent);
+  font-weight: 600;
+}
+.play-btn {
+  background: var(--accent2); color: #07192e; border: 0;
+  padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+.play-btn.ghost { background: transparent; color: var(--accent2); border: 1px solid var(--accent2); }
+
+.dashboard {
+  display: grid; grid-template-columns: 1fr 320px; gap: 24px;
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .dashboard { grid-template-columns: 1fr; }
+}
+canvas#stage {
+  width: 100%; max-width: 520px; aspect-ratio: 1 / 1; height: auto;
+  background: linear-gradient(180deg, #0e1530, #0a1029);
+  border: 1px solid var(--line); border-radius: 12px;
+}
+.side { display: flex; flex-direction: column; gap: 14px; }
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px;
+}
+.card h3 { margin: 0 0 8px; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+.goal { margin: 0; font-size: 15px; }
+.badge {
+  display: inline-block; margin-top: 10px; padding: 4px 10px;
+  border-radius: 6px; font-size: 12px; background: #1b2752; color: var(--accent2);
+}
+.badge.adversarial { background: #4a1d28; color: var(--warn); }
+.events { padding-left: 18px; margin: 0; font-size: 13px; color: #d2d9e8; max-height: 220px; overflow-y: auto; }
+.events li { margin-bottom: 6px; }
+.events code { font-size: 12px; color: var(--warn); }
+.legend ul { margin: 0; padding-left: 0; list-style: none; font-size: 13px; }
+.legend li { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.dot-robot { background: var(--accent); }
+.dot-cmd   { background: var(--accent2); }
+.dot-ws    { background: transparent; border: 2px solid #6b7280; }
+.dot-obs   { background: var(--warn); }
+.dot-int   { background: #fbbf24; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+@media (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+.constraints td:first-child, .constraints td:last-child { color: var(--accent); font-family: ui-monospace, SFMono-Regular, monospace; }
+.mapping td { vertical-align: top; }
+code { background: #1a2447; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+.arch { width: 100%; height: auto; border-radius: 12px; background: white; padding: 12px; }
+
+footer { padding: 32px 0; color: var(--muted); font-size: 13px; }
+footer p { margin: 0 0 4px; }
