@@ -23,7 +23,7 @@ the security responsibilities of the Microsoft Robotics platform.
   short-lived credential → policy gate on every privileged action."
   That model is exactly what a robot fleet needs.
 - **Regulated / air-gapped deployment muscle.** ALDO ships into FFX, AGC,
-  and disconnected environments — robotics deployments (manufacturing,
+  and disconnected environments - robotics deployments (manufacturing,
   defense, healthcare) have the same shape of constraints.
 - **Release-gate validation discipline.** The gate I run for TVM is the
   same pattern needed for releasing safety-monitor code: explicit
@@ -35,5 +35,5 @@ the security responsibilities of the Microsoft Robotics platform.
 - Functional-safety standards work (IEC 61508, ISO 13482, ISO 10218) at
   certification depth rather than literature-review depth.
 - Real motion-planning and control-systems intuition.
-- Live red-teaming of LLM-driven physical agents at scale — the toy
+- Live red-teaming of LLM-driven physical agents at scale - the toy
   scenarios here are the start of an evaluation harness, not the end.

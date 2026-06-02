@@ -1,4 +1,4 @@
-"""Core safety envelope logic. No ROS2, no I/O — pure decision function."""
+"""Core safety envelope logic. No ROS2, no I/O - pure decision function."""
 from __future__ import annotations
 
 import math

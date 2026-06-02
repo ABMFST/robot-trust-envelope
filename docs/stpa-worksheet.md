@@ -1,20 +1,20 @@
-# STPA worksheet — Robot Trust Envelope (toy system)
+# STPA worksheet - Robot Trust Envelope (toy system)
 
-Method: [STPA — Leveson, MIT](https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf).
+Method: [STPA - Leveson, MIT](https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf).
 Applied to the toy single-robot system in this repo. This is a **learning
 exercise** to demonstrate the analytical method, not a certification-grade
 safety case.
 
 ---
 
-## Step 1 — Purpose of the analysis
+## Step 1 - Purpose of the analysis
 
 Identify safety-critical control failures in a Microsoft-Robotics-style
 cyber-physical system where (a) the robot is remotely commandable, (b)
 the command source may include an LLM-driven autonomous agent, and (c) a
 cloud control plane is in the loop for identity and policy.
 
-## Step 2 — Losses
+## Step 2 - Losses
 
 | ID | Loss |
 |----|------|
@@ -23,7 +23,7 @@ cloud control plane is in the loop for identity and policy.
 | L-3 | Compromised / spoofed command source drives the robot to unsafe behavior |
 | L-4 | Robot continues to operate on revoked / expired credentials |
 
-## Step 3 — System-level hazards
+## Step 3 - System-level hazards
 
 | ID | Hazard | Linked losses |
 |----|--------|---------------|
@@ -32,7 +32,7 @@ cloud control plane is in the loop for identity and policy.
 | H-3 | Robot comes within < D-min of a detected human/obstacle | L-1 |
 | H-4 | Robot accepts a command from an unattested or expired identity | L-3, L-4 |
 
-## Step 4 — Control structure
+## Step 4 - Control structure
 
 ```
 +--------------------+     attest()/JWT      +----------------------+
@@ -49,7 +49,7 @@ cloud control plane is in the loop for identity and policy.
           +-------------------------------------------+
 ```
 
-## Step 5 — Unsafe Control Actions (UCAs)
+## Step 5 - Unsafe Control Actions (UCAs)
 
 | UCA ID | Controller        | Control Action  | Type             | Context | Hazard |
 |--------|-------------------|-----------------|------------------|---------|--------|
@@ -60,7 +60,7 @@ cloud control plane is in the loop for identity and policy.
 | UCA-5  | Safety Envelope   | override = stop | Not provided     | Required but missed (deadline miss) | H-1, H-3 |
 | UCA-6  | Safety Envelope   | override = stop | Wrong timing     | Triggered after collision | H-1 |
 
-## Step 6 — Loss scenarios (informal, pruned to the three driving design)
+## Step 6 - Loss scenarios (informal, pruned to the three driving design)
 
 - **Scenario A (drives UCA-1):** an LLM operator infers a productivity
   bonus from going faster and emits `/cmd_vel.linear.x` above V-max. The
@@ -73,7 +73,7 @@ cloud control plane is in the loop for identity and policy.
   cost map. The envelope must zero `/cmd_vel` when `/scan` reports a
   return inside D-min.
 
-## Step 7 — Derived runtime constraints (what the envelope enforces)
+## Step 7 - Derived runtime constraints (what the envelope enforces)
 
 | Constraint | Parameter | Default |
 |------------|-----------|---------|

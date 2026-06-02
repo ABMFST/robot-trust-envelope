@@ -1,6 +1,6 @@
 """Thin ROS2 adapter around `core.SafetyEnvelope`.
 
-Imported only when running inside a ROS2 environment — keeping it in a
+Imported only when running inside a ROS2 environment - keeping it in a
 separate module means the rest of the package and the test suite have no
 ROS2 dependency. Run as:
 

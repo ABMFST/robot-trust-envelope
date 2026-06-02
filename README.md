@@ -7,10 +7,10 @@ policy patterns Microsoft already ships in Azure (Trusted Launch, vTPM,
 Confidential VMs, regulated/air-gapped cloud rollouts) onto a simulated
 robot fleet, then adds two layers the cloud doesn't have to think about:
 
-1. **STPA-derived runtime safety envelopes** — bounded velocity, workspace
-   polygons, standoff distance — enforced as a ROS2 control-plane node
+1. **STPA-derived runtime safety envelopes** - bounded velocity, workspace
+   polygons, standoff distance - enforced as a ROS2 control-plane node
    that can override `/cmd_vel` and emit `/safety/intervention` events.
-2. **AI red-team scenarios** — an LLM-driven "operator" agent given the
+2. **AI red-team scenarios** - an LLM-driven "operator" agent given the
    robot command API and adversarial natural-language goals; the envelope
    intercepts every prohibited command.
 
@@ -21,7 +21,7 @@ for use against a real TurtleBot4 Gazebo sim (`sim/`).
 
 ## Why this exists
 
-Built as a working artifact for the [Microsoft Robotics — Robot Security &
+Built as a working artifact for the [Microsoft Robotics - Robot Security &
 Safety](https://apply.careers.microsoft.com/careers/job/1970393556868893)
 opening. See `docs/trusted-launch-mapping.md` for the explicit mapping
 between my current Azure Edge Security / Trusted Launch work and the

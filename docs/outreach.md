@@ -1,17 +1,17 @@
-# Outreach package — Tim
+# Outreach package - Tim
 
 All three artifacts below pitch the same thing in three formats. Pick the
 one that fits the channel. The site URL is the lead asset; everything
 else is supporting context.
 
 **Site:** https://gray-sand-0b848070f.7.azurestaticapps.net
-**Repo:** https://github.com/ABMFST/robot-trust-envelope (private — Tim can be added on request)
+**Repo:** https://github.com/ABMFST/robot-trust-envelope (private - Tim can be added on request)
 
 ---
 
-## A) Email — short cold send
+## A) Email - short cold send
 
-> Subject: Robot security & safety role — built a prototype that bridges to what I do today
+> Subject: Robot security & safety role - built a prototype that bridges to what I do today
 >
 > Hi Tim,
 >
@@ -33,7 +33,7 @@ else is supporting context.
 >
 > Repo is private but I'd happily add you. Could I steal 20 minutes to
 > walk you through it and hear what you'd actually want this team to
-> own? Either way, congrats on the charter — the cyber + functional
+> own? Either way, congrats on the charter - the cyber + functional
 > safety + AI safety overlap is exactly the kind of seam that's
 > historically been hard to staff.
 >
@@ -43,21 +43,21 @@ else is supporting context.
 
 ---
 
-## B) LinkedIn DM — even shorter
+## B) LinkedIn DM - even shorter
 
-> Hi Tim — saw the Robot Security & Safety MTS role on your team. I run
+> Hi Tim - saw the Robot Security & Safety MTS role on your team. I run
 > Trusted Launch for Azure Local today and the patterns map cleanly to a
 > robot fleet, so I spent the weekend prototyping it: attestation + an
 > STPA-derived safety envelope + an LLM red-team that the envelope
 > blocks. Live demo + write-up: https://gray-sand-0b848070f.7.azurestaticapps.net
-> — would love 20 minutes to walk through it.
+> - would love 20 minutes to walk through it.
 
 ---
 
 ## C) One-page PDF leave-behind
 
 `leave-behind.md` (also rendered to `leave-behind.pdf` after you run
-`python -m scripts.render_pdf`) — single page, three sections:
+`python -m scripts.render_pdf`) - single page, three sections:
 
 1. **The pitch in one paragraph.**
 2. **The architecture diagram** (`docs/architecture.svg`).
@@ -69,7 +69,7 @@ else is supporting context.
 ## Honest framing notes
 
 - Lead with the *bridge* (Trusted Launch → robot fleet). Don't open with
-  ROS2 or STPA — those are the stretch, not the strength.
+  ROS2 or STPA - those are the stretch, not the strength.
 - Be explicit that the STPA worksheet is a learning exercise, not a
   certification-grade safety case. Tim will know the difference instantly
   and will respect the honesty.

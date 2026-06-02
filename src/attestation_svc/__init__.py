@@ -1,4 +1,4 @@
-"""attestation_svc — fake-TPM-quote → JWT identity for simulated robots.
+"""attestation_svc - fake-TPM-quote → JWT identity for simulated robots.
 
 This is the robotics analogue of the Gen2 VM Trusted Launch flow we ship
 on Azure today (Azure Local / ALDO):

@@ -1,7 +1,7 @@
-# Robot Trust Envelope — one-page leave-behind
+# Robot Trust Envelope - one-page leave-behind
 
 **Built by Amir Bredy · TPM II, Microsoft Azure Edge Security**
-*For the Microsoft Robotics — Robot Security & Safety opening (200038208)*
+*For the Microsoft Robotics - Robot Security & Safety opening (200038208)*
 
 ---
 
@@ -11,8 +11,8 @@ The cyber control plane a Microsoft Robotics fleet needs looks a lot like
 the one I already run on Azure: a hardware root of trust on each device,
 an independent attestation service that signs short-lived identity, and
 policy that gates every privileged command. The two pieces the cloud
-doesn't have to think about — **runtime safety envelopes on autonomous
-behavior** and **adversarial AI red-teaming of physical systems** — sit
+doesn't have to think about - **runtime safety envelopes on autonomous
+behavior** and **adversarial AI red-teaming of physical systems** - sit
 naturally on top of that same substrate. This weekend I built a working
 prototype that demonstrates the whole stack end-to-end against a
 TurtleBot4 sim: attestation, an STPA-derived envelope that overrides

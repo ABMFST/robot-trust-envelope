@@ -25,7 +25,7 @@ class RobotQuote:
         return h.hexdigest()
 
 
-# Reference allow-list — in real life this is an MAA / SCM policy.
+# Reference allow-list - in real life this is an MAA / SCM policy.
 ALLOWED_FIRMWARE_HASHES: set[str] = {
     "fw-v1.4.2-signed",
     "fw-v1.5.0-signed",

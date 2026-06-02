@@ -1,4 +1,4 @@
-"""safety_envelope — STPA-derived runtime monitor.
+"""safety_envelope - STPA-derived runtime monitor.
 
 The `core` module is pure Python (no ROS2 dependency) so it can be unit
 tested and driven by the sim_shim on any platform. `ros2_node` is a thin

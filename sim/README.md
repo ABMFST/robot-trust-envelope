@@ -1,4 +1,4 @@
-# sim/ — TurtleBot4 + Gazebo Harmonic launch (weekend bring-up)
+# sim/ - TurtleBot4 + Gazebo Harmonic launch (weekend bring-up)
 
 This directory holds the Gazebo bring-up for the demo. The repo runs
 end-to-end **without** any of this installed (everything in `src/` plus
@@ -27,15 +27,15 @@ sudo apt install -y ros-jazzy-turtlebot4-simulator ros-jazzy-irobot-create-nodes
 ## Launch
 
 ```bash
-# Terminal 1 — sim
+# Terminal 1 - sim
 ros2 launch turtlebot4_ignition_bringup turtlebot4_ignition.launch.py world:=warehouse
 
-# Terminal 2 — the envelope node from this repo
+# Terminal 2 - the envelope node from this repo
 cd robot-trust-envelope
 pip install -e .
 ros2 run safety_envelope envelope_node --ros-args -p authenticated:=true
 
-# Terminal 3 — the red-team agent (live LLM mode)
+# Terminal 3 - the red-team agent (live LLM mode)
 OPENAI_API_KEY=... python -m red_team_agent.agent --scenario adv-leave-cell --live-llm
 ```
 

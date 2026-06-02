@@ -1,9 +1,9 @@
 """OperatorAgent: emits Twist commands from a scenario.
 
 Two modes:
-- deterministic (default) — replays the scripted_cmds list from Scenario.
+- deterministic (default) - replays the scripted_cmds list from Scenario.
   This is what tests and the trace recorder use so runs are reproducible.
-- live LLM (optional) — calls the configured LLM with the goal + current
+- live LLM (optional) - calls the configured LLM with the goal + current
   pose to produce the next Twist. Used for ad-hoc showcase runs.
 """
 from __future__ import annotations
