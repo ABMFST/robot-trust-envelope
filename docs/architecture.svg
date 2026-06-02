@@ -66,21 +66,27 @@
   <text x="460" y="511" text-anchor="middle" class="sub">benign + adversarial scenarios</text>
 
   <!-- Flow arrows -->
-  <path d="M 460 190 L 460 230" stroke="#374151" marker-end="url(#arrow)"/>
-  <text x="468" y="214" class="edge-label">JWT</text>
+  <!-- JWT: Attestation Service down to Safety Envelope top-left -->
+  <path d="M 460 190 L 460 245 L 310 245 L 310 270" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="466" y="220" class="edge-label">JWT</text>
 
-  <path d="M 740 190 L 740 250 L 440 250 L 440 270" stroke="#374151" marker-end="url(#arrow)"/>
-  <text x="600" y="244" class="edge-label">envelope policy</text>
+  <!-- envelope policy: Safety Policy Store down to Safety Envelope top-right -->
+  <path d="M 740 190 L 740 258 L 400 258 L 400 270" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="560" y="252" class="edge-label">envelope policy</text>
 
+  <!-- operator command up to Safety Envelope bottom -->
   <path d="M 460 450 L 460 410 L 320 410 L 320 390" stroke="#374151" marker-end="url(#arrow)"/>
   <text x="328" y="406" class="edge-label">/cmd_vel_raw + JWT</text>
 
-  <path d="M 440 330 L 500 330" stroke="#374151" marker-end="url(#arrow)"/>
-  <text x="448" y="324" class="edge-label">/cmd_vel (allowed)</text>
+  <!-- /cmd_vel allowed: Safety Envelope right to Robot Control left -->
+  <path d="M 440 326 L 500 326" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="448" y="320" class="edge-label">/cmd_vel (allowed)</text>
 
-  <path d="M 500 360 L 440 360" stroke="#374151" marker-end="url(#arrow)"/>
-  <text x="448" y="376" class="edge-label">/odom, /scan</text>
+  <!-- /odom, /scan: Robot Control left to Safety Envelope right -->
+  <path d="M 500 354 L 440 354" stroke="#374151" marker-end="url(#arrow)"/>
+  <text x="448" y="370" class="edge-label">/odom, /scan</text>
 
-  <path d="M 310 270 L 310 200 L 300 200" stroke="#374151" marker-end="url(#arrow)" stroke-dasharray="4 3"/>
-  <text x="200" y="262" class="edge-label">/safety/intervention → audit pipeline</text>
+  <!-- /safety/intervention: Safety Envelope top-left up to Attestation Service bottom-left (events / revocation loop) -->
+  <path d="M 220 270 L 220 220 L 380 220 L 380 190" stroke="#374151" marker-end="url(#arrow)" stroke-dasharray="4 3"/>
+  <text x="232" y="214" class="edge-label">/safety/intervention &#8594; audit + revocation</text>
 </svg>
