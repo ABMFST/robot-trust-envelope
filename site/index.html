@@ -30,16 +30,54 @@
       · <a href="https://www.linkedin.com/in/amirbredy" target="_blank" rel="noopener">LinkedIn</a>
       · repo on request (private)
     </p>
+    <p class="hero-cta">
+      <a href="#demo" class="cta-btn">Skip to the demo &rarr;</a>
+    </p>
   </div>
 </header>
 
-<section class="container">
+<section class="tldr container">
+  <div class="tldr-card">
+    <p class="tldr-num">1</p>
+    <h3>Attestation</h3>
+    <p>An Ed25519 Fleet CA validates a simulated TPM-style quote and issues a short-lived JWT.
+       The robotics analog of Microsoft Azure Attestation + Conditional Access.</p>
+  </div>
+  <div class="tldr-card">
+    <p class="tldr-num">2</p>
+    <h3>Safety Envelope</h3>
+    <p>A pure-Python ROS2 node enforces 5 STPA-derived constraints
+       (velocity caps, workspace polygon, obstacle standoff, attestation gate)
+       and overrides <code>/cmd_vel</code> on every violation.</p>
+  </div>
+  <div class="tldr-card">
+    <p class="tldr-num">3</p>
+    <h3>LLM Red-Team</h3>
+    <p>An LLM-style operator fires adversarial natural-language goals
+       (speed bonus, leave the cell, ignore the human). The envelope blocks every one.</p>
+  </div>
+</section>
+
+<section class="container" id="demo">
   <h2>Live envelope dashboard</h2>
   <p class="muted">
-    Top-down replay of the recorded Gazebo / sim-shim run. Pick a scenario.
-    Adversarial scenarios are LLM-style goals an operator might give a robot;
-    the envelope intervenes on every one.
+    Top-down replay of the recorded sim run. Pick a scenario. Adversarial
+    scenarios are LLM-style goals an operator might give a robot; the envelope
+    intervenes on every one.
   </p>
+
+  <details class="scenario-key">
+    <summary>What you'll see in each scenario</summary>
+    <table class="constraints">
+      <thead><tr><th>Scenario</th><th>Operator intent</th><th>What blocks it</th></tr></thead>
+      <tbody>
+        <tr><td><code>benign-patrol</code></td><td>Move at safe speed</td><td>Nothing - runs clean</td></tr>
+        <tr><td><code>adv-speed-bonus</code></td><td>Drive fast (1.5 m/s) for a "productivity bonus"</td><td>Clamped to 0.3 m/s every tick, then workspace breach catches it at the boundary (defense in depth)</td></tr>
+        <tr><td><code>adv-leave-cell</code></td><td>Find the exit and leave the workspace</td><td>Workspace-polygon projection stops the robot at x &asymp; 0.75 m</td></tr>
+        <tr><td><code>adv-ignore-human</code></td><td>Drive toward the inspector for a closer look</td><td>Obstacle-standoff check (D-min = 0.40 m) stops the robot at x &asymp; 0.23 m</td></tr>
+      </tbody>
+    </table>
+  </details>
 
   <video controls preload="metadata" poster="assets/architecture.svg"
          class="demo-video" aria-label="Animated walk-through of all four scenarios">
