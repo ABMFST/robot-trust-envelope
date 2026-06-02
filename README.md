@@ -23,9 +23,10 @@ for use against a real TurtleBot4 Gazebo sim (`sim/`).
 
 Built as a working artifact for the [Microsoft Robotics - Robot Security &
 Safety](https://apply.careers.microsoft.com/careers/job/1970393556868893)
-opening. See `docs/trusted-launch-mapping.md` for the explicit mapping
-between my current Azure Edge Security / Trusted Launch work and the
-robotics security domain.
+opening. I currently run Trusted Launch (vTPM + Secure Boot) for Azure
+Local and own the Security Benchmarks program for our public and
+regulated cloud environments; see `docs/trusted-launch-mapping.md` for
+the explicit mapping between that work and the robotics security domain.
 
 ## Quick start (no ROS2 required)
 

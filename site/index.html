@@ -14,12 +14,15 @@
     <p class="eyebrow">Robot Trust Envelope · weekend prototype</p>
     <h1>The cyber control plane for robots wants to look a lot like the one for confidential VMs.</h1>
     <p class="lede">
-      I run <strong>Trusted Launch (vTPM + Secure Boot) for Microsoft's Azure Local</strong> across two
-      million-plus devices in regulated and air-gapped environments. This project ports those patterns -
-      hardware-rooted attestation, short-lived signed identity, policy-gated commands - onto a simulated
-      robot fleet, then adds two things the cloud doesn't have to think about:
-      <strong>STPA-derived runtime safety envelopes</strong> and <strong>LLM red-team scenarios</strong>
-      that try to drive the robot outside those envelopes.
+      I run <strong>Trusted Launch (vTPM + Secure Boot)</strong> and own
+      <strong>Security Benchmarks for Microsoft's public and regulated cloud
+      environments</strong> on Azure Local, across two million-plus devices.
+      This project ports those patterns - hardware-rooted attestation,
+      short-lived signed identity, and CIS-aligned policy gates - onto a
+      simulated robot fleet, then adds two things the cloud doesn't have to
+      think about: <strong>STPA-derived runtime safety envelopes</strong>
+      and <strong>LLM red-team scenarios</strong> that try to drive the
+      robot outside those envelopes.
     </p>
     <p class="byline">
       Built for the Microsoft Robotics - Robot Security &amp; Safety opening.
@@ -109,6 +112,7 @@
       <tr><td>AAD-issued attestation token</td><td>Short-lived EdDSA JWT (5 min TTL)</td></tr>
       <tr><td>Conditional Access on workload identity</td><td><code>caps</code> claim gate on <code>/cmd_vel</code></td></tr>
       <tr><td>Azure Guest Configuration / Policy</td><td>Envelope policy YAML</td></tr>
+      <tr><td>CIS-aligned Security Benchmarks across the Linux fleet (public + regulated)</td><td>STPA-derived per-robot safety envelope constraints</td></tr>
       <tr><td>Air-gapped network isolation</td><td>Workspace polygon</td></tr>
       <tr><td>Confidential Computing memory isolation</td><td>Runtime envelope on autonomous behavior</td></tr>
       <tr><td>ICM / Sev1 incident response</td><td><code>/safety/intervention</code> + audit trail</td></tr>
@@ -119,7 +123,7 @@
 
 <footer>
   <div class="container">
-    <p>Amir Bredy · TPM II, Microsoft Edge Security (Azure Local) · <a href="mailto:amirbredy@microsoft.com">amirbredy@microsoft.com</a></p>
+    <p>Amir Bredy · TPM II, Microsoft Edge Security (Azure Local) · Trusted Launch + Security Benchmarks (Public &amp; Regulated) · <a href="mailto:amirbredy@microsoft.com">amirbredy@microsoft.com</a></p>
     <p class="muted small">Personal project · not affiliated with or endorsed by Microsoft.</p>
   </div>
 </footer>
