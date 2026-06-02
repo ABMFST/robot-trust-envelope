@@ -38,6 +38,29 @@ make demo            # writes site/demo-trace.json
 
 Open `site/index.html` to see the dashboard replay the recorded trace.
 
+## What this prototype *isn't*
+
+So you don't have to read the code to find out:
+
+- **Not a real-time system.** Pure Python on no specific runtime
+  guarantees. A production envelope belongs in a C++ `rclcpp` node with
+  a watchdog.
+- **Not safety-certified.** STPA and FMEA worksheets are learning
+  exercises on a toy system, not certification-grade safety cases.
+- **No Gazebo in the embedded demo video.** The video renders a recorded
+  scenario trace through matplotlib. The ROS2 adapter
+  (`safety_envelope/ros2_node.py`) and `sim/` launch instructions
+  describe how to run the same envelope against a TurtleBot4 in real
+  Gazebo Harmonic, but bringing that up needs WSL2 + Ubuntu 24.04 +
+  ROS2 Jazzy.
+- **Live LLM is opt-in.** The recorded trace and tests use
+  deterministic scripted commands so runs are reproducible. Live-LLM
+  mode (`OPENAI_API_KEY`) lives in `red_team_agent/agent.py` and works,
+  but it isn't what the demo video shows.
+- **No multi-robot, no human-in-the-loop teaming, no FMECA criticality
+  on top of the FMEA, no software-FMEA on the envelope itself.** All
+  reasonable next steps; none done here.
+
 ## With ROS2 + Gazebo
 
 See `sim/README.md` for the TurtleBot4 launch. The safety envelope runs as
