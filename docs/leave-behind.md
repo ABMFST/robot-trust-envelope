@@ -16,11 +16,11 @@ Boot) and the Security Benchmarks program for our public + regulated
 cloud environments. The two pieces the cloud doesn't have to think about,
 **runtime safety envelopes on autonomous behavior** and **adversarial AI
 red-teaming of physical systems**, sit naturally on top of that same
-substrate. This weekend I built a working prototype that demonstrates the
-whole stack end-to-end against a TurtleBot4 sim: attestation, an
-STPA-derived envelope that overrides `/cmd_vel` (the per-device analog of
-a CIS baseline rule), and an LLM-driven operator that tries to violate
-the envelope. The envelope blocks every adversarial scenario.
+substrate. I built a working prototype that demonstrates the whole stack
+end-to-end against a TurtleBot4 sim: attestation, an STPA-derived
+envelope that overrides `/cmd_vel` (the per-device analog of a CIS
+baseline rule), and an LLM-driven operator that tries to violate the
+envelope. The envelope blocks every adversarial scenario.
 
 ## What's there
 - **Live dashboard + scenario replay:** https://gray-sand-0b848070f.7.azurestaticapps.net
@@ -41,7 +41,7 @@ the envelope. The envelope blocks every adversarial scenario.
 
 ## Honest framing
 
-This is a weekend prototype, not a safety-certified system. The STPA
+This is a prototype, not a safety-certified system. The STPA
 worksheet is a learning exercise on a toy system; functional-safety
 standards expertise is what I'd be growing into on the job. The
 engineering quality of the code and the depth of the cloud-to-robot

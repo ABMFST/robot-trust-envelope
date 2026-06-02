@@ -1,4 +1,4 @@
-# sim/ - TurtleBot4 + Gazebo Harmonic launch (weekend bring-up)
+# sim/ - TurtleBot4 + Gazebo Harmonic launch (optional bring-up)
 
 This directory holds the Gazebo bring-up for the demo. The repo runs
 end-to-end **without** any of this installed (everything in `src/` plus
@@ -44,7 +44,7 @@ the envelope sits in front of the planner) and publishes the allowed
 `/cmd_vel` plus a `/safety/intervention` event topic. Record the topic
 with `ros2 bag record /tf /odom /scan /cmd_vel /safety/intervention` and
 re-export to the website trace format with `scripts/bag_to_trace.py`
-(left as a TODO past the weekend).
+(TODO).
 
 ## envelope.yaml
 

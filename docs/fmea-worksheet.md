@@ -55,10 +55,10 @@ first.
 - It is not a complete FMEA - I haven't enumerated failure modes for the
   attestation service, the robot controller, or the operator network.
 - It does not include criticality analysis (FMECA) or fault-tree linkage.
-- Mitigations are sketched, not implemented. The repo today is a weekend
+- Mitigations are sketched, not implemented. The repo today is a
   prototype, not a production safety system.
 
-If I take this further past the weekend the next steps are: implement
-the top three mitigations (F-3 schema validation today, F-1 watchdog
-next, F-4 fail-closed scan staleness), add an FMECA criticality column,
-and link each failure mode to the STPA UCA it corresponds to.
+If I take this further the next steps are: implement the top three
+mitigations (F-3 schema validation first, F-1 watchdog next, F-4
+fail-closed scan staleness), add an FMECA criticality column, and link
+each failure mode to the STPA UCA it corresponds to.

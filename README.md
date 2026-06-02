@@ -68,5 +68,5 @@ tests/                # pytest
 
 ## Status
 
-Weekend prototype. Not safety-certified, not production. STPA worksheet is
+Prototype. Not safety-certified, not production. STPA worksheet is
 a learning exercise on a toy system.

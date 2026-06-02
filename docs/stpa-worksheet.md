@@ -93,7 +93,7 @@ These map 1:1 to the parameters in `src/safety_envelope/policy.py`.
 - It does not include a software hazard analysis (FMEA-D) on the envelope
   itself.
 
-If I take this further past the weekend, the next steps are: layer a
+If I take this further the next steps are: layer a
 `FMEA` on the envelope's own failure modes, add the cloud control plane
 as an explicit controller in Step 4, and enumerate UCAs around
 JWT rotation / revocation.

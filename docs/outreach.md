@@ -20,8 +20,8 @@ else is supporting context.
 > + Secure Boot) for Azure Local and own the Security Benchmarks program
 > for public and regulated cloud environments across that fleet. The
 > parallels between the edge/cloud control plane I work in and what your team
-> is building for robot fleets jumped out at me, so I spent the weekend
-> building a working prototype to make that case concretely.
+> is building for robot fleets jumped out at me, so I built a working
+> prototype to make that case concretely.
 >
 > Three components on top of a TurtleBot4 sim: an attestation service
 > that mirrors my Trusted Launch flow, a runtime safety envelope derived
@@ -48,7 +48,7 @@ else is supporting context.
 > Hi Tim - saw the Robot Security & Safety MTS role on your team. I run
 > Trusted Launch for Azure Local and own the Security Benchmarks program
 > for our public + regulated cloud environments. Those patterns map
-> cleanly to a robot fleet, so I spent the weekend prototyping it:
+> cleanly to a robot fleet, so I prototyped it:
 > attestation + an STPA-derived safety envelope (the per-device analog of
 > a security baseline) + an LLM red-team that the envelope blocks. Live
 > demo + write-up: https://gray-sand-0b848070f.7.azurestaticapps.net

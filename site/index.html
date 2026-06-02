@@ -11,7 +11,7 @@
 
 <header class="hero">
   <div class="container">
-    <p class="eyebrow">Robot Trust Envelope · weekend prototype</p>
+    <p class="eyebrow">Robot Trust Envelope · prototype</p>
     <h1>The cyber control plane for robots wants to look a lot like the one for confidential VMs.</h1>
     <p class="lede">
       I'm <strong>Amir Bredy</strong>, a TPM II on Microsoft's Azure Edge
@@ -61,11 +61,7 @@
 
 <section class="container" id="demo">
   <h2>Live envelope dashboard</h2>
-  <p class="muted">
-    Top-down replay of the recorded sim run. Pick a scenario. Adversarial
-    scenarios are LLM-style goals an operator might give a robot; the envelope
-    intervenes on every one.
-  </p>
+  <p class="muted">Top-down replay of the recorded sim run. Pick a scenario. The envelope intervenes on every adversarial run.</p>
 
   <details class="scenario-key">
     <summary>What you'll see in each scenario</summary>
@@ -158,16 +154,14 @@
       <tr><td>ICM / Sev1 incident response</td><td><code>/safety/intervention</code> + audit trail</td></tr>
     </tbody>
   </table>
-  <p class="muted small">Honest framing: STPA worksheet is a learning exercise on a toy system, not a certification-grade safety case. The repo's CI runs lint + 10 unit tests covering attestation happy/sad paths and every envelope branch.</p>
 </section>
 
 <section class="container">
   <h2>Safety method coverage</h2>
   <p class="muted">
     The JD lists FMEA, FTA, HAZOP, and STPA. This repo applies STPA to the
-    system (what unsafe actions can the operator or robot take?) and FMEA
-    to the envelope itself (what happens when the safety monitor fails?).
-    Both worksheets are honest learning exercises on a toy system.
+    system and FMEA to the envelope itself. Both worksheets are learning
+    exercises on a toy system, not certification-grade.
   </p>
   <div class="method-cards">
     <div class="method-card">
@@ -196,9 +190,7 @@
 
 <section class="container">
   <h2>What I'd own in the first 90 days</h2>
-  <p class="muted">
-    What this weekend prototype hints at, scaled to what the role actually owns.
-  </p>
+  <p class="muted">What this prototype hints at, scaled to what the role actually owns.</p>
   <ol class="days">
     <li><strong>Threat model the production robot fleet end to end.</strong>
       Catalogue assets, trust boundaries, and data flows from device firmware
@@ -210,20 +202,20 @@
       review with a functional-safety practitioner, and produce a real
       hazard log and safety requirements traceability matrix.</li>
     <li><strong>Stand up a real LLM red-team evaluation harness.</strong>
-      Take the toy scenarios in this repo and turn them into a continuous
-      evaluation: prompt corpora, sim-in-the-loop runs, intervention
-      counts as a release gate. Coordinate with Microsoft's Office of
-      Responsible AI on shared methodology.</li>
+      Turn the toy scenarios in this repo into a continuous evaluation:
+      prompt corpora, sim-in-the-loop runs, intervention counts as a
+      release gate. Coordinate with Microsoft's Office of Responsible AI
+      on shared methodology.</li>
     <li><strong>Define the envelope policy DSL and its control-plane delivery.</strong>
       Modeled on what I already deliver with Azure Guest Configuration and
       Security Benchmarks: declarative policy, versioned, signed, delivered
       to every robot, with attested receipt and continuous compliance
       reporting back. The envelope YAML in this repo is the v0.1 sketch.</li>
-    <li><strong>Establish the release gate.</strong>
-      Bring the same release-gate validation discipline I run today for
-      TVM to the robotics platform: explicit safety + security exit
-      criteria, evidence captured, defect-escape tracked. The repo's CI
-      is the toy version of this.</li>
+    <li><strong>Establish the safety + security release gate.</strong>
+      Bring the release-gate validation discipline I run today across
+      Microsoft Edge Security (my whole sub-org) to the robotics platform:
+      explicit exit criteria, evidence captured, defect-escape tracked.
+      The repo's CI is the toy version of this.</li>
   </ol>
 </section>
 
