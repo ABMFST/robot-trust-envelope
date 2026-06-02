@@ -103,14 +103,14 @@ def main() -> None:
     subtitle_text = fig.text(
         0.04, 0.905, "", color=ACCENT, fontsize=12, weight="bold"
     )
-    footer_text = fig.text(
+    fig.text(
         0.04, 0.03,
         "github.com/ABMFST/robot-trust-envelope  ·  Amir Bredy",
         color=MUTED, fontsize=10,
     )
 
-    side_title = side.text(0.0, 0.94, "Scenario", color=MUTED, fontsize=11,
-                           weight="bold", transform=side.transAxes)
+    side.text(0.0, 0.94, "Scenario", color=MUTED, fontsize=11,
+              weight="bold", transform=side.transAxes)
     scenario_name = side.text(0.0, 0.88, "", color=INK, fontsize=15,
                               weight="bold", transform=side.transAxes)
     scenario_goal = side.text(0.0, 0.81, "", color=INK, fontsize=11,
@@ -118,9 +118,8 @@ def main() -> None:
     scenario_badge = side.text(0.0, 0.74, "", color=ACCENT2, fontsize=10,
                                weight="bold", transform=side.transAxes)
 
-    events_header = side.text(0.0, 0.66, "Envelope events", color=MUTED,
-                              fontsize=11, weight="bold",
-                              transform=side.transAxes)
+    side.text(0.0, 0.66, "Envelope events", color=MUTED,
+              fontsize=11, weight="bold", transform=side.transAxes)
     events_text = side.text(0.0, 0.62, "", color=INK, fontsize=10,
                             va="top", family="monospace",
                             transform=side.transAxes)
