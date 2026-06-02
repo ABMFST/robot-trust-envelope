@@ -19,6 +19,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=7", "ruff>=0.4", "mypy>=1.8"]
 agent = ["openai>=1.30"]
+video = ["matplotlib>=3.8", "imageio-ffmpeg>=0.4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
